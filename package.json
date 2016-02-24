@@ -1,0 +1,34 @@
+{
+  "name": "eslint-pretty",
+  "version": "1.0.0",
+  "description": "Wrap eslint to format and pretty-print from stdin",
+  "main": "index.js",
+  "dependencies": {
+    "eslint": "^2.2.0"
+  },
+  "devDependencies": {
+    "tape": "^4.4.0"
+  },
+  "scripts": {
+    "test": "tape"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bugeats/eslint-pretty.git"
+  },
+  "keywords": [
+    "eslint",
+    "pretty-print",
+    "formatter",
+    "javascript",
+    "pretty",
+    "es6",
+    "es2015"
+  ],
+  "author": "Chadwick Dahlquist",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bugeats/eslint-pretty/issues"
+  },
+  "homepage": "https://github.com/bugeats/eslint-pretty#readme"
+}
