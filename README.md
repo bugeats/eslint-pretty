@@ -1,2 +1,4 @@
 # eslint-pretty
-Formatter and pretty-printer based on your eslint rules
+
+Wrap eslint and esformatter to format and pretty-print from stdin.
+
