@@ -1,10 +1,10 @@
 'use strict';
 
-var test = require('tape');
-var spawn = require('child_process').spawn;
-var fs = require('fs');
+const test = require('tape');
+const spawn = require('child_process').spawn;
+const fs = require('fs');
 
-test('eslint-pretty basics', function (t) {
+test('eslint-pretty basics', (t) => {
     t.plan(2);
     callBin('alone', (out) => {
         t.equal(out, 'alone;', 'basic semicolon');
@@ -14,7 +14,7 @@ test('eslint-pretty basics', function (t) {
     });
 });
 
-test('eslint-pretty fixes bad code', function (t) {
+test('eslint-pretty fixes bad code', (t) => {
     t.plan(1);
     let badcode = fs.readFileSync(__dirname + '/assets/badcode.js');
     callBin(badcode.toString(), (out) => {
@@ -26,15 +26,15 @@ test('eslint-pretty fixes bad code', function (t) {
 // -----------------------------------------------------------------------------
 
 function callBin(input, callback) {
-    var bin = spawn(__dirname + '/../bin/eslint-pretty.js');
-    var chunks = [];
+    let bin = spawn(__dirname + '/../bin/eslint-pretty.js');
+    let chunks = [];
 
     bin.stdout.on('data', (chunk) => {
         chunks.push(chunk);
     });
 
     bin.stdout.on('end', () => {
-        var buf = Buffer.concat(chunks);
+        let buf = Buffer.concat(chunks);
         callback(buf.toString());
     });
 

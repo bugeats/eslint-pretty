@@ -1,18 +1,20 @@
 #!/usr/bin/env node
 
-var api = require('../lib/api');
+'use strict';
 
-getPiped(function (piped) {
+const api = require('../lib/api');
+
+getPiped((piped) => {
     process.stdout.write(api.doPretty(piped.toString()));
 });
 
 function getPiped(cb) {
-    var chunks = [];
+    let chunks = [];
     process.stdin.on('data', function (chunk) {
         chunks.push(chunk);
     });
     process.stdin.on('end', function () {
-        var buf = Buffer.concat(chunks);
+        let buf = Buffer.concat(chunks);
         cb(buf);
     });
 }

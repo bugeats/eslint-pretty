@@ -14,6 +14,7 @@ module.exports = {
         'comma-style': [2, 'last'],
         'consistent-return': 2,
         'eqeqeq': 2,
+        'no-var': 2,
         'indent': [2, 4],
         'linebreak-style': [2, 'unix'],
         'no-console': 0,
