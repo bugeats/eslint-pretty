@@ -25,9 +25,10 @@ After carefully building your `.eslintrc.js` file, wouldn't it be nice to quickl
 
 ## How
 
-This project is merely a thin wrapper around two very excellent projects: [esformatter](https://github.com/millermedeiros/esformatter) and [https://github.com/eslint/eslint](https://github.com/eslint/eslint).
+This project is merely a thin wrapper around two very excellent projects: [esformatter](https://github.com/millermedeiros/esformatter) and [eslint](https://github.com/eslint/eslint).
 
 It does a couple of passes over the linty code. First it uses esformatter to fix the basic stuff like indenting.  Then it uses eslint to apply any rules that are "fixable". It may pass through eslint a few times. This can be slow.
 
 All the rules detected from your local `.eslintrc.js` and `.esformatter` will apply.
 
+If anything goes wrong, eslint-pretty will fail open and return your original input.
