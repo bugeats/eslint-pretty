@@ -32,3 +32,17 @@ It does a couple of passes over the linty code. First it uses esformatter to fix
 All the rules detected from your local `.eslintrc.js` and `.esformatter` will apply.
 
 If anything goes wrong, eslint-pretty will fail open and return your original input.
+
+
+## Usage in Vim / Neovim
+
+Add this to your vimrc:
+
+```vimscript
+autocmd FileType javascript setlocal equalprg=eslint-pretty
+```
+
+Now visually select some nasty code and hit `=`. Bam! Nice and pretty.
+
+Run `:help equalprg` to see why this works.
+
