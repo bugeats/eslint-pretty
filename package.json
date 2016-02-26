@@ -1,6 +1,6 @@
 {
     "name": "eslint-pretty",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "description": "Wrap eslint and esformatter to format and pretty-print from stdin",
     "main": "index.js",
     "dependencies": {

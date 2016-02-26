@@ -4,9 +4,11 @@
 
 const api = require('../lib/api');
 
-getPiped((piped) => {
-    process.stdout.write(api.doPretty(piped.toString()));
-});
+if (!didInterceptArgs()) {
+    getPiped((piped) => {
+        process.stdout.write(api.doPretty(piped.toString()));
+    });
+}
 
 function getPiped(cb) {
     let chunks = [];
@@ -19,3 +21,16 @@ function getPiped(cb) {
     });
 }
 
+function didInterceptArgs() {
+    let shouldPrintVersion = false;
+    process.argv.forEach(arg => {
+        if (arg === '--version') {
+            shouldPrintVersion = true;
+        }
+    });
+    if (shouldPrintVersion) {
+        process.stdout.write(`v${ api.getVersion() }\n`);
+        return true;
+    }
+    return false;
+}
