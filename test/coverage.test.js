@@ -6,8 +6,8 @@ const fs = require('fs');
 
 test('eslint-pretty basics', (t) => {
     t.plan(2);
-    callBin('alone', (out) => {
-        t.equal(out, 'alone;', 'basic semicolon');
+    callBin('var alone', (out) => {
+        t.equal(out, 'var alone;', 'basic semicolon');
     });
     callBin('( ͡° ͜ʖ ͡°)', (out) => {
         t.equal(out, '( ͡° ͜ʖ ͡°)', 'does not choke on bs');
@@ -19,6 +19,18 @@ test('eslint-pretty fixes bad code', (t) => {
     let badcode = fs.readFileSync(__dirname + '/assets/badcode.js');
     callBin(badcode.toString(), (out) => {
         t.ok(out, 'does not choke');
+    });
+});
+
+test('eslint-pretty preserves leading whitespace', (t) => {
+    t.plan(1);
+    let code = [
+        '   function test() {',
+        '       return true;',
+        '   }'
+    ].join('\n');
+    callBin(code, (out) => {
+        t.equal(out, code, 'preserves three spaces');
     });
 });
 
