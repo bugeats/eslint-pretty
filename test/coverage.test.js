@@ -6,8 +6,8 @@ const fs = require('fs');
 
 test('eslint-pretty basics', (t) => {
     t.plan(2);
-    callBin('var alone', (out) => {
-        t.equal(out, 'var alone;', 'basic semicolon');
+    callBin('let alone', (out) => {
+        t.equal(out, 'let alone;', 'basic semicolon');
     });
     callBin('( ͡° ͜ʖ ͡°)', (out) => {
         t.equal(out, '( ͡° ͜ʖ ͡°)', 'does not choke on bs');
