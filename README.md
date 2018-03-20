@@ -7,7 +7,6 @@ Wrap eslint and esformatter to format and pretty-print javascript via stdio.
 
 ```shell
 npm install -g eslint-pretty
-
 ```
 
 
@@ -46,3 +45,11 @@ Now visually select some nasty code and hit `=`. Bam! Nice and pretty.
 
 Run `:help equalprg` to see why this works.
 
+
+## Contributing
+
+Whatever just do this:
+
+```shell
+npm test
+```
