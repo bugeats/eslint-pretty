@@ -1,14 +1,14 @@
 {
   "name": "eslint-pretty",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Wrap eslint and esformatter to format and pretty-print from stdin",
   "main": "index.js",
   "dependencies": {
     "esformatter": "^0.10.0",
-    "eslint": "^4.19.0"
+    "eslint": "^5.16.0"
   },
   "devDependencies": {
-    "tape": "^4.9.0"
+    "tape": "^4.10.2"
   },
   "scripts": {
     "test": "NODE_ENV=test ./node_modules/tape/bin/tape ./lib/**/**/*.test.js ./test/**/**/*.test.js"
